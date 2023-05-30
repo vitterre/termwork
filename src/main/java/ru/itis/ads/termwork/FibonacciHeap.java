@@ -3,6 +3,10 @@ package ru.itis.ads.termwork;
 import java.util.ArrayList;
 
 public class FibonacciHeap {
+
+	public static Boolean ENABLE_PROFILING = false;
+	public static int ITERATIONS = 0;
+
 	/** Points to the minimum node in the heap. */
 	private Node min;
 	/** Number of nodes in the heap. If the type is ever widened,
@@ -37,11 +41,13 @@ public class FibonacciHeap {
 		Node start = min;
 		Node w = min;
 		do {
+			ITERATIONS++;
 			Node x = w;
 			// Because x might be moved, save its sibling now.
 			Node nextW = w.right;
 			int d = x.degree;
 			while (A[d] != null) {
+				ITERATIONS++;
 				// Make one of the nodes a child of the other.
 				Node y = A[d];
 				if (x.key.compareTo(y.key) > 0) {
@@ -78,6 +84,7 @@ public class FibonacciHeap {
 		for (Node a : A) {
 			if (a != null && a.key.compareTo(min.key) < 0) {
 				min = a;
+				ITERATIONS++;
 			}
 		}
 	}
@@ -107,6 +114,7 @@ public class FibonacciHeap {
 	 * @param  delete  true if deleting node (in which case, k is ignored).
 	 */
 	private void decreaseKey(Node x, Object newData, Comparable k, boolean delete) {
+		ITERATIONS++;
 		if (!delete && k.compareTo(x.key) > 0) {
 			throw new IllegalArgumentException("cannot increase key value");
 		}
@@ -161,6 +169,7 @@ public class FibonacciHeap {
 	 * @return newly created heap node.
 	 */
 	public Node insert(Object x, Comparable key) {
+		ITERATIONS++;
 		Node node = new Node(x, key);
 		// concatenate node into min list
 		if (min != null) {
@@ -187,6 +196,7 @@ public class FibonacciHeap {
 	 * @return  heap node with the smallest key, or null if empty.
 	 */
 	public Node min() {
+		ITERATIONS++;
 		return min;
 	}
 
@@ -207,6 +217,7 @@ public class FibonacciHeap {
 			z.child.parent = null;
 			// for each child of z do...
 			for (Node x = z.child.right; x != z.child; x = x.right) {
+				ITERATIONS++;
 				// set parent[x] to null
 				x.parent = null;
 			}
@@ -259,6 +270,7 @@ public class FibonacciHeap {
 	 * @return  new heap containing H1 and H2
 	 */
 	public static FibonacciHeap union(FibonacciHeap H1, FibonacciHeap H2) {
+		ITERATIONS++;
 		FibonacciHeap H = new FibonacciHeap();
 		if (H1 != null && H2 != null) {
 			H.min = H1.min;
@@ -347,6 +359,7 @@ public class FibonacciHeap {
 		public void cascadingCut(Node min) {
 			Node z = parent;
 			// if there's a parent...
+			ITERATIONS++;
 			if (z != null) {
 				if (mark) {
 					// it's marked, cut it from parent
@@ -372,6 +385,7 @@ public class FibonacciHeap {
 		 * @param  min  the minimum heap node, to which x is added.
 		 */
 		public void cut(Node x, Node min) {
+			ITERATIONS++;
 			// remove x from childlist and decrement degree
 			x.left.right = x.right;
 			x.right.left = x.left;
@@ -423,6 +437,7 @@ public class FibonacciHeap {
 			parent.degree++;
 			// set mark false
 			mark = false;
+			ITERATIONS++;
 		}
 
 		public void addToList(ArrayList<Node> l) {

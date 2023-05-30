@@ -5,22 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ad38384-ca35-434f-9b80-14869723f43c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/itis/ads/termwork/FibonacciHeap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/itis/ads/termwork/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/times_for_finding.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/times_for_insertions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/times_for_removing.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/itis/ads/termwork/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/steps_for_finding.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/steps_for_insertions.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/steps_for_removing.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/itis/ads/termwork/FibonacciHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/itis/ads/termwork/FibonacciHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/itis/ads/termwork/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/itis/ads/termwork/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/times_for_finding.txt" beforeDir="false" afterPath="$PROJECT_DIR$/times_for_finding.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/times_for_insertions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/times_for_insertions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/times_for_removing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/times_for_removing.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +64,9 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -117,7 +115,8 @@
       <workItem from="1684938886579" duration="3836000" />
       <workItem from="1684952480685" duration="2889000" />
       <workItem from="1685365476473" duration="18000" />
-      <workItem from="1685366308033" duration="3438000" />
+      <workItem from="1685366308033" duration="3589000" />
+      <workItem from="1685421588517" duration="2957000" />
     </task>
     <servers />
   </component>

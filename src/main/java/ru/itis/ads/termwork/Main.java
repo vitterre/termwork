@@ -42,6 +42,10 @@ public class Main {
 		long[] timesForRemoving = new long[10000];
 		long[] timesForFinding = new long[10000];
 
+		int[] stepsForInsertions = new int[10000];
+		int[] stepsForRemoving = new int[10000];
+		int[] stepsForFinding = new int[10000];
+
 		FibonacciHeap fibonacciHeap = new FibonacciHeap();
 
 		for (int i = 0; i < arr.length; i++) {
@@ -51,9 +55,11 @@ public class Main {
 
 			long end = System.nanoTime();
 			timesForInsertions[i] = end - start;
+			stepsForInsertions[i] = FibonacciHeap.ITERATIONS;
+			FibonacciHeap.ITERATIONS = 0;
 		}
 
-		System.out.println(Arrays.toString(timesForInsertions));
+		System.out.println(Arrays.toString(stepsForInsertions));
 
 		for (int i = 0; i < arr.length; i++) {
 			long start = System.nanoTime();
@@ -62,36 +68,52 @@ public class Main {
 
 			long end = System.nanoTime();
 			timesForRemoving[i] = end - start;
+			stepsForRemoving[i] = FibonacciHeap.ITERATIONS;
+			FibonacciHeap.ITERATIONS = 0;
 		}
 
-		System.out.println(Arrays.toString(timesForRemoving));
-
-
+		System.out.println(Arrays.toString(stepsForRemoving));
 
 		for (int i = 0; i < arr.length; i++) {
 			fibonacciHeap.insert(arr[i], new IntegerComparable(arr[i]));
 		}
 
+		FibonacciHeap.ITERATIONS = 0;
+
 		for (int i = 0; i < arr.length; i++) {
 			long start = System.nanoTime();
 
-			FibonacciHeap.Node min = fibonacciHeap.min();
+			fibonacciHeap.min();
 			fibonacciHeap.removeMin();
 
 			long end = System.nanoTime();
 			timesForFinding[i] = end - start;
+			stepsForFinding[i] = FibonacciHeap.ITERATIONS;
+			FibonacciHeap.ITERATIONS = 0;
 		}
 
-		System.out.println(Arrays.toString(timesForFinding));
+		System.out.println(Arrays.toString(stepsForFinding));
 
 		log(timesForInsertions, "times_for_insertions.txt");
 		log(timesForRemoving, "times_for_removing.txt");
 		log(timesForFinding, "times_for_finding.txt");
+
+		log(stepsForInsertions, "steps_for_insertions.txt");
+		log(stepsForRemoving, "steps_for_removing.txt");
+		log(stepsForFinding, "steps_for_finding.txt");
 	}
 
 	private static void log(long[] array, String fileName) throws IOException {
 		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
 		for (long el : array) {
+			bufferedWriter.write(Long.toString(el));
+			bufferedWriter.newLine();
+		}
+	}
+
+	private static void log(int[] array, String fileName) throws IOException {
+		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
+		for (int el : array) {
 			bufferedWriter.write(Long.toString(el));
 			bufferedWriter.newLine();
 		}
